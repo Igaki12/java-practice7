@@ -1,17 +1,17 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
 		int num = 0;
+		String str = ""; 
 		System.out.println("ƒR[ƒh‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
 		Scanner scan = new Scanner(System.in);
 		operate ope = new operate();
 		
 		while(num != 9) {
-	
 		    try {
-		    	num = scan.nextInt();
+				str = scan.next();
+		    	num = Integer.parseInt(str);
 		    	switch(num) {
 			    case 0:
 			    	ope.display();
@@ -30,9 +30,8 @@ public class Main {
 			    	break;
 		    	}
 		    }
-		    catch (InputMismatchException e) {
-		    	System.out.println("1~4‚ ‚é‚¢‚Í9‚Ì”¼Šp”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"); 
-		    	num = 0;
+		    catch (NumberFormatException e) {
+		    	System.out.println("0~4‚ ‚é‚¢‚Í9‚Ì”¼Šp”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"); 
 		    }
 		
 		    
