@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
 
@@ -8,27 +9,38 @@ public class Main {
 		operate ope = new operate();
 		
 		while(num != 9) {
-		    num = scan.nextInt();
-		
-		    switch(num) {
-		    case 0:
-		    	ope.display();
-		    	break;
-		    case 1:
-			    ope.goN();
-			    break;
-		    case 2:
-		    	ope.goE();
-		    	break;
-		    case 3:
-		    	ope.goS();
-		    	break;
-		    case 4:
-		    	ope.goW();
-		    	break;
+	
+		    try {
+		    	num = scan.nextInt();
+		    	switch(num) {
+			    case 0:
+			    	ope.display();
+			    	break;
+			    case 1:
+				    ope.goN();
+				    break;
+			    case 2:
+			    	ope.goE();
+			    	break;
+			    case 3:
+			    	ope.goS();
+			    	break;
+			    case 4:
+			    	ope.goW();
+			    	break;
+		    	}
 		    }
+		    catch (InputMismatchException e) {
+		    	System.out.println("1~4‚ ‚é‚¢‚Í9‚Ì”¼Šp”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"); 
+		    	num = 0;
+		    }
+		
+		    
+		    
+		    
 	    }
 		System.out.println("ƒvƒƒOƒ‰ƒ€‚ğI—¹‚µ‚Ü‚µ‚½");
+		scan.close();
 
     }
 }
